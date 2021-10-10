@@ -1,5 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
+import { Dashboard } from './components/Dashboard';
+import { Header } from './components/Header';
 import { GlobalSytle } from './styles/global';
 
 const Title = styled.h1`
@@ -10,12 +12,9 @@ const Title = styled.h1`
 export function App() {
   return (
     <div>
-      <header>
-        <Title>
-          Hello 
-        </Title>
-      </header>
-        <GlobalSytle />
+      <Header />
+      <Dashboard/>
+      <GlobalSytle />
     </div>
   );
 }
