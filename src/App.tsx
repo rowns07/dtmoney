@@ -1,8 +1,9 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { Dashboard } from './components/Dashboard';
 import { Header } from './components/Header';
 import { NewTransactionModal } from './components/NewTransactionModal';
 import { GlobalSytle } from './styles/global';
+import { TransactionsProvider } from './TransactionsContext';
 
 export function App() {
 
@@ -17,7 +18,7 @@ export function App() {
   }
 
   return (
-    <div>
+    <TransactionsProvider>
       <Header onOpentransactionModal={handleOpenNewTransactionModal} />
       <Dashboard />
       <NewTransactionModal
@@ -25,7 +26,7 @@ export function App() {
         onRequestClose={handleCloseNewTransactionModal}
       />
       <GlobalSytle />
-    </div>
+    </TransactionsProvider>
   );
 }
 
